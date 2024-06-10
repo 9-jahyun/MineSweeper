@@ -1,6 +1,8 @@
+package MineSweeper;
+
 public class Timer extends Thread {
     Frame frame;
-    boolean on_off=false;
+    boolean on_off = false;
 
     Timer(Frame frame) {
         this.frame = frame;
@@ -16,24 +18,22 @@ public class Timer extends Thread {
 
     public void reset() {
         off();
-        // TODO : 프레임 Timer reset 구현
+        // TODO : 프레임 MineSweeper.Timer reset 구현
     }
 
     public void run() {
-        while(true) {
+        while (true) {
             try {
-                // TODO : 프레임 Timer 구현
-                if(on_off) {
+                // TODO : 프레임 MineSweeper.Timer 구현
+                if (on_off) {
                     Thread.sleep(1000);
-                }
-                else
-                    while(!on_off) {
+                } else
+                    while (!on_off) {
                         if (on_off)
                             break;
                         reset();
                     }
-            }
-            catch(InterruptedException e) {
+            } catch (InterruptedException e) {
                 return;
             }
         }

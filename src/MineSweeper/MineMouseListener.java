@@ -1,5 +1,8 @@
-import java.awt.event.*;
-import javax.swing.*;
+package MineSweeper;
+
+import javax.swing.JButton;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class MineMouseListener implements MouseListener {
     int i, j;
