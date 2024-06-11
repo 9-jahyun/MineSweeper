@@ -101,7 +101,7 @@ public class Mine {
                 }
             timer.off();
             JOptionPane.showMessageDialog(null, "LOSE", null, JOptionPane.WARNING_MESSAGE);
-            // TODO : 리플레이 함수 구현
+            frame.replay(this);
         } else {
             switch (mineBoard[a][b]) {
                 case 1:
@@ -138,7 +138,8 @@ public class Mine {
                         button[i][j].setIcon(new ImageIcon());
                 }
             timer.off();
-            // TODO : 타이머 프레임, 리플레이 함수 구현
+            JOptionPane.showMessageDialog(null, "WIN\n기록 : " + frame.mineDisplay, null, JOptionPane.WARNING_MESSAGE);
+            frame.replay(this);
         }
     }
 
@@ -149,12 +150,14 @@ public class Mine {
             mineFlag[a][b] = false;
             button[a][b].setIcon(new ImageIcon());
             mineNum++;
-            // TODO : 지뢰개수 프레임 구현
+            frame.mineDisplay = mineNum + "개";
+            frame.mineNum.setText(frame.mineDisplay);
         } else {
             mineFlag[a][b] = true;
             button[a][b].setIcon(new ImageIcon());
             mineNum--;
-            // TODO : 지뢰개수 프레임 구현
+            frame.mineDisplay = mineNum + "개";
+            frame.mineNum.setText(frame.mineDisplay);
         }
     }
 }

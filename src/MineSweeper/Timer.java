@@ -18,13 +18,16 @@ public class Timer extends Thread {
 
     public void reset() {
         off();
-        // TODO : 프레임 MineSweeper.Timer reset 구현
+        frame.time = 0;
+        frame.timerLabel.setText("00:00");
     }
 
     public void run() {
         while (true) {
             try {
-                // TODO : 프레임 MineSweeper.Timer 구현
+                frame.timerDisplay = makeTimer(frame.time);
+                frame.timerLabel.setText(frame.timerDisplay);
+                frame.time++;
                 if (on_off) {
                     Thread.sleep(1000);
                 } else

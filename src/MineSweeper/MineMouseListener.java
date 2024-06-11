@@ -53,8 +53,8 @@ public class MineMouseListener implements MouseListener {
                         frame.hard();
                     }
                 }
-            } //else if (mode == 2)
-            // TODO : replay 구현
+            } else if (mode == 2)
+                frame.replay(mine);
         }
     }
 
