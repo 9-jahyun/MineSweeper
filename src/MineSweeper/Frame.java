@@ -10,8 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
-// TODO : ImageIcon 이미지 설정 필요
-
 public class Frame {
     JFrame frame = new JFrame("Mine Sweeper");
     Container contentPane = frame.getContentPane();
@@ -27,9 +25,9 @@ public class Frame {
     JButton normalButton = new JButton("NORMAL");
     JButton hardButton = new JButton("HARD");
     JButton replayButton = new JButton("REPLAY");
-    JLabel minePic = new JLabel(new ImageIcon());
+    JLabel minePic = new JLabel(new ImageIcon("pic/mine.png"));
     JLabel mineNum;
-    JLabel timerPic = new JLabel(new ImageIcon());
+    JLabel timerPic = new JLabel(new ImageIcon("pic/timer.png"));
     JLabel timerLabel = new JLabel("0");
     String mineDisplay;
     String timerDisplay;
@@ -86,7 +84,7 @@ public class Frame {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 button[i][j] = new JButton();
-                button[i][j].setIcon(new ImageIcon());
+                button[i][j].setIcon(new ImageIcon("pic/false.png"));
                 listener[i][j] = new MineMouseListener(i, j, easyMine, button, this, timer);
                 button[i][j].addMouseListener(listener[i][j]);
                 panel.add(button[i][j]);
@@ -132,7 +130,7 @@ public class Frame {
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
                 button[i][j] = new JButton();
-                button[i][j].setIcon(new ImageIcon());
+                button[i][j].setIcon(new ImageIcon("pic/false.png"));
                 listener[i][j] = new MineMouseListener(i, j, normalMine, button, this, timer);
                 button[i][j].addMouseListener(listener[i][j]);
                 panel.add(button[i][j]);
@@ -178,7 +176,7 @@ public class Frame {
         for (int i = 0; i < 22; i++) {
             for (int j = 0; j < 22; j++) {
                 button[i][j] = new JButton();
-                button[i][j].setIcon(new ImageIcon());
+                button[i][j].setIcon(new ImageIcon("pic/false.png"));
                 listener[i][j] = new MineMouseListener(i, j, hardMine, button, this, timer);
                 button[i][j].addMouseListener(listener[i][j]);
                 panel.add(button[i][j]);

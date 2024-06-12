@@ -5,8 +5,6 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.util.Arrays;
 
-// TODO : ImageIcon 이미지 설정 필요
-
 public class Mine {
 
     private static final int MINE = 9;
@@ -76,7 +74,7 @@ public class Mine {
         mineMark[a][b] = true;
         if (mineBoard[a][b] == 0) {
             emptyNum--;
-            button[a][b].setIcon(new ImageIcon());
+            button[a][b].setIcon(new ImageIcon("pic/true.png"));
             if (a != 0 && b != 0)
                 open(a - 1, b - 1, button, frame, timer);
             if (a != 0)
@@ -97,7 +95,7 @@ public class Mine {
             for (int i = 0; i < size; i++)
                 for (int j = 0; j < size; j++) {
                     if (mineBoard[i][j] == 9)
-                        button[i][j].setIcon(new ImageIcon());
+                        button[i][j].setIcon(new ImageIcon("pic/mine.png"));
                 }
             timer.off();
             JOptionPane.showMessageDialog(null, "LOSE", null, JOptionPane.WARNING_MESSAGE);
@@ -105,28 +103,28 @@ public class Mine {
         } else {
             switch (mineBoard[a][b]) {
                 case 1:
-                    button[a][b].setIcon(new ImageIcon());
+                    button[a][b].setIcon(new ImageIcon("pic/1.png"));
                     break;
                 case 2:
-                    button[a][b].setIcon(new ImageIcon());
+                    button[a][b].setIcon(new ImageIcon("pic/2.png"));
                     break;
                 case 3:
-                    button[a][b].setIcon(new ImageIcon());
+                    button[a][b].setIcon(new ImageIcon("pic/3.png"));
                     break;
                 case 4:
-                    button[a][b].setIcon(new ImageIcon());
+                    button[a][b].setIcon(new ImageIcon("pic/4.png"));
                     break;
                 case 5:
-                    button[a][b].setIcon(new ImageIcon());
+                    button[a][b].setIcon(new ImageIcon("pic/5.png"));
                     break;
                 case 6:
-                    button[a][b].setIcon(new ImageIcon());
+                    button[a][b].setIcon(new ImageIcon("pic/6.png"));
                     break;
                 case 7:
-                    button[a][b].setIcon(new ImageIcon());
+                    button[a][b].setIcon(new ImageIcon("pic/7.png"));
                     break;
                 case 8:
-                    button[a][b].setIcon(new ImageIcon());
+                    button[a][b].setIcon(new ImageIcon("pic/8.png"));
                     break;
             }
             emptyNum--;
@@ -135,10 +133,10 @@ public class Mine {
             for (int i = 0; i < size; i++)
                 for (int j = 0; j < size; j++) {
                     if (mineBoard[i][j] == 9)
-                        button[i][j].setIcon(new ImageIcon());
+                        button[i][j].setIcon(new ImageIcon("pic/mine.png"));
                 }
             timer.off();
-            JOptionPane.showMessageDialog(null, "WIN\n기록 : " + frame.mineDisplay, null, JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "WIN\n기록 : " + frame.timerDisplay, null, JOptionPane.WARNING_MESSAGE);
             frame.replay(this);
         }
     }
@@ -148,13 +146,13 @@ public class Mine {
             return;
         if (mineFlag[a][b]) {
             mineFlag[a][b] = false;
-            button[a][b].setIcon(new ImageIcon());
+            button[a][b].setIcon(new ImageIcon("pic/false.png"));
             mineNum++;
             frame.mineDisplay = mineNum + "개";
             frame.mineNum.setText(frame.mineDisplay);
         } else {
             mineFlag[a][b] = true;
-            button[a][b].setIcon(new ImageIcon());
+            button[a][b].setIcon(new ImageIcon("pic/flag.png"));
             mineNum--;
             frame.mineDisplay = mineNum + "개";
             frame.mineNum.setText(frame.mineDisplay);

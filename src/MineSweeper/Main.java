@@ -8,7 +8,7 @@ public class Main {
         normal_mine.init(16);
         Mine hard_mine = new Mine();
         hard_mine.init(22);
-        Frame f = new Frame(easy_mine, normal_mine, hard_mine);
-        f.start();
+        Frame frame = new Frame(easy_mine, normal_mine, hard_mine);
+        frame.start();
     }
 }
